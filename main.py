@@ -426,11 +426,11 @@ def main():
 
     run_delayed_tasks()
     demo.queue(concurrency_count=CONCURRENT_COUNT).launch(
-        quiet=True,
+        # quiet=True,
         server_name="0.0.0.0", 
-        ssl_keyfile=None if SSL_KEYFILE == "" else SSL_KEYFILE,
-        ssl_certfile=None if SSL_CERTFILE == "" else SSL_CERTFILE,
-        ssl_verify=False,
+        # ssl_keyfile=None if SSL_KEYFILE == "" else SSL_KEYFILE,
+        # ssl_certfile=None if SSL_CERTFILE == "" else SSL_CERTFILE,
+        # ssl_verify=False,
         server_port=PORT,
         favicon_path=os.path.join(os.path.dirname(__file__), "docs/logo.png"), 
         auth=AUTHENTICATION if len(AUTHENTICATION) != 0 else None,
