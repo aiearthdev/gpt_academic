@@ -5,6 +5,8 @@
 # - 如何运行(其他操作系统，选择任意一个固定端口50923): `docker run --rm -it -e WEB_PORT=50923 -p 50923:50923 gpt-academic `
 FROM python:3.11
 
+ARG WEB_PORT
+ENV WEB_PORT=$WEB_PORT
 
 # 非必要步骤，更换pip源 （以下三行，可以删除）
 # RUN echo '[global]' > /etc/pip.conf && \
@@ -28,8 +30,9 @@ RUN pip3 install -r requirements.txt
 
 
 # 非必要步骤，用于预热模块（可以删除）
-RUN python3  -c 'from check_proxy import warm_up_modules; warm_up_modules()'
+# RUN python3  -c 'from check_proxy import warm_up_modules; warm_up_modules()'
 
+EXPOSE $WEB_PORT
 
 # 启动（必要）
 CMD ["python3", "-u", "main.py"]
