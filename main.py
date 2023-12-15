@@ -20,7 +20,7 @@ def main():
     from check_proxy import get_current_version
     from themes.theme import adjust_theme, advanced_css, theme_declaration, load_dynamic_theme
 
-    title_html = f"<h1 align=\"center\">智慧地球（AI·Earth）社区 GPT 学术优化</h1>{theme_declaration}"
+    title_html = f"<h1 align=\"center\">智慧地球（AI·Earth）社区 GPT 学术优化</h1><h2 align=\"center\">欢迎加入GPT技术交流QQ群：949698745</h2>{theme_declaration}"
     # description =  "Github源代码开源和更新[地址🚀](https://github.com/binary-husky/gpt_academic), "
     # description += "感谢热情的[开发者们❤️](https://github.com/binary-husky/gpt_academic/graphs/contributors)."
     description = "常见问题请查阅[项目Wiki](https://github.com/binary-husky/gpt_academic/wiki), "
