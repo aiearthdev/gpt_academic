@@ -32,8 +32,20 @@ def main():
     from themes.theme import adjust_theme, advanced_css, theme_declaration
     from themes.theme import js_code_for_css_changing, js_code_for_darkmode_init, js_code_for_toggle_darkmode, js_code_for_persistent_cookie_init
     from themes.theme import load_dynamic_theme, to_cookie_str, from_cookie_str, init_cookie
-    title_html = f"<h1 align=\"center\">GPT 学术优化 {get_current_version()}</h1>{theme_declaration}"
-    
+
+    title_html = f"<h1 align=\"center\">智慧地球（AI·Earth）社区 GPT 学术优化</h1><h2 align=\"center\">欢迎加入GPT技术交流QQ群：949698745</h2>{theme_declaration}"
+    # description =  "Github源代码开源和更新[地址🚀](https://github.com/binary-husky/gpt_academic), "
+    # description += "感谢热情的[开发者们❤️](https://github.com/binary-husky/gpt_academic/graphs/contributors)."
+    description = "常见问题请查阅[项目Wiki](https://github.com/binary-husky/gpt_academic/wiki), "
+    # description += "如遇到Bug请前往[Bug反馈](https://github.com/binary-husky/gpt_academic/issues)."
+    description += "</br></br>普通对话使用说明: 1. 输入问题; 2. 点击提交"
+    description += "</br></br>基础功能区使用说明: 1. 输入文本; 2. 点击任意基础功能区按钮"
+    description += "</br></br>函数插件区使用说明: 1. 输入路径/问题, 或者上传文件; 2. 点击任意函数插件区按钮"
+    description += "</br></br>虚空终端使用说明: 点击虚空终端, 然后根据提示输入指令, 再次点击虚空终端"
+    description += "</br></br>如何保存对话: 点击保存当前的对话按钮"
+    description += "</br></br>如何语音对话: 请阅读Wiki"
+    userguide = "仅支持AIO平台:[aio.aiearth.dev](https://aio.aiearth.dev)专属OpenAI中转API令牌；\n[社区福利❤使用说明🚀](https://pl6pt5c18e.feishu.cn/docx/YQpadvaxIoe53CxhTqkcKLI2n2b)"
+
     # 问询记录, python 版本建议3.9+（越新越好）
     import logging, uuid
     os.makedirs(PATH_LOGGING, exist_ok=True)
@@ -98,6 +110,7 @@ def main():
                             audio_mic = gr.Audio(source="microphone", type="numpy", elem_id="elem_audio", streaming=True, show_label=False).style(container=False)
                     with gr.Row():
                         status = gr.Markdown(f"Tip: 按Enter提交, 按Shift+Enter换行。当前模型: {LLM_MODEL} \n {proxy_info}", elem_id="state-panel")
+                        gr.Markdown(userguide)
                 with gr.Accordion("基础功能区", open=True, elem_id="basic-panel") as area_basic_fn:
                     with gr.Row():
                         for k in range(NUM_CUSTOM_BASIC_BTN):
