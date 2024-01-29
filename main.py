@@ -3,7 +3,7 @@ import os;
 os.environ['no_proxy'] = '*'  # 避免代理网络产生意外污染
 
 help_menu_description = \
-    """平台模型支持请查阅[AIO通用智能模型支持](https://api.aiearth.dev/about), 
+    """平台模型支持请查阅[AIO通用智能模型支持](https://api.aiearth.dev/about), </br></br>
     如遇到Bug请前往QQ社群：949698745进行Bug反馈.
     </br></br>普通对话使用说明: 1. 输入问题; 2. 点击提交
     </br></br>基础功能区使用说明: 1. 输入文本; 2. 点击任意基础功能区按钮
@@ -120,6 +120,7 @@ def main():
                     with gr.Row():
                         status = gr.Markdown(f"Tip: 按Enter提交, 按Shift+Enter换行。当前模型: {LLM_MODEL} \n {proxy_info}",
                                              elem_id="state-panel")
+                        gr.Markdown(userguide)
                 with gr.Accordion("基础功能区", open=True, elem_id="basic-panel") as area_basic_fn:
                     with gr.Row():
                         for k in range(NUM_CUSTOM_BASIC_BTN):
