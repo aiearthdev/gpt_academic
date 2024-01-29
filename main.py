@@ -1,17 +1,15 @@
 import os; os.environ['no_proxy'] = '*' # 避免代理网络产生意外污染
 
 help_menu_description = \
-"""Github源代码开源和更新[地址🚀](https://github.com/binary-husky/gpt_academic), 
-感谢热情的[开发者们❤️](https://github.com/binary-husky/gpt_academic/graphs/contributors).
-</br></br>常见问题请查阅[项目Wiki](https://github.com/binary-husky/gpt_academic/wiki), 
-如遇到Bug请前往[Bug反馈](https://github.com/binary-husky/gpt_academic/issues).
+"""常见问题请查阅[项目Wiki](https://github.com/binary-husky/gpt_academic/wiki), 
+如遇到Bug请前往QQ社群：949698745进行Bug反馈.
 </br></br>普通对话使用说明: 1. 输入问题; 2. 点击提交
 </br></br>基础功能区使用说明: 1. 输入文本; 2. 点击任意基础功能区按钮
 </br></br>函数插件区使用说明: 1. 输入路径/问题, 或者上传文件; 2. 点击任意函数插件区按钮
 </br></br>虚空终端使用说明: 点击虚空终端, 然后根据提示输入指令, 再次点击虚空终端
 </br></br>如何保存对话: 点击保存当前的对话按钮
 </br></br>如何语音对话: 请阅读Wiki
-</br></br>如何临时更换API_KEY: 在输入区输入临时API_KEY后提交（网页刷新后失效）"""
+</br></br>如何临时更换API_KEY: 在输入区输入AIO平台临时API_KEY后提交（网页刷新后失效）"""
 
 def main():
     import gradio as gr
@@ -32,7 +30,8 @@ def main():
     from themes.theme import adjust_theme, advanced_css, theme_declaration
     from themes.theme import js_code_for_css_changing, js_code_for_darkmode_init, js_code_for_toggle_darkmode, js_code_for_persistent_cookie_init
     from themes.theme import load_dynamic_theme, to_cookie_str, from_cookie_str, init_cookie
-    title_html = f"<h1 align=\"center\">GPT 学术优化 {get_current_version()}</h1>{theme_declaration}"
+    title_html = f"<h1 align=\"center\">智慧地球（AI·Earth）社区 GPT 学术优化</h1><h2 align=\"center\">欢迎加入GPT技术交流QQ群：949698745</h2>{theme_declaration}"
+    userguide = "输入区输入AIO通用智能平台:[aio.aiearth.dev](https://aio.aiearth.dev)开发者API功能服务令牌更换使用GPT4模型；\n[社区福利❤使用说明🚀](https://pl6pt5c18e.feishu.cn/docx/YQpadvaxIoe53CxhTqkcKLI2n2b)"
     
     # 问询记录, python 版本建议3.9+（越新越好）
     import logging, uuid
@@ -74,7 +73,7 @@ def main():
     cancel_handles = []
     customize_btns = {}
     predefined_btns = {}
-    with gr.Blocks(title="GPT 学术优化", theme=set_theme, analytics_enabled=False, css=advanced_css) as demo:
+    with gr.Blocks(title="智慧地球（AI·Earth）社区 GPT 学术优化", theme=set_theme, analytics_enabled=False, css=advanced_css) as demo:
         gr.HTML(title_html)
         secret_css, dark_mode, persistent_cookie = gr.Textbox(visible=False), gr.Textbox(DARK_MODE, visible=False), gr.Textbox(visible=False)
         cookies = gr.State(load_chat_cookies())
