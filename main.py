@@ -31,7 +31,7 @@ def main():
     from themes.theme import js_code_for_css_changing, js_code_for_darkmode_init, js_code_for_toggle_darkmode, js_code_for_persistent_cookie_init
     from themes.theme import load_dynamic_theme, to_cookie_str, from_cookie_str, init_cookie
 
-    title_html = f"<h1 align=\"center\">智慧地球（AI·Earth）社区 GPT 学术优化</h1><h2 align=\"center\">欢迎访问[CSCI学术服务平台]((https://academic.aiearth.dev/)体验免费学术服务！</h2>{theme_declaration}"
+    title_html = f"<h1 align=\"center\">智慧地球（AI·Earth）社区 GPT 学术优化</h1><h2 align=\"center\">欢迎访问<a href='https://academic.aiearth.dev'>CSCI学术服务平台</a>体验免费学术服务！</h2>{theme_declaration}"
     # description =  "Github源代码开源和更新[地址🚀](https://github.com/binary-husky/gpt_academic), "
     # description += "感谢热情的[开发者们❤️](https://github.com/binary-husky/gpt_academic/graphs/contributors)."
     description = "常见问题请查阅[项目Wiki](https://github.com/binary-husky/gpt_academic/wiki), "
