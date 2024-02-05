@@ -42,7 +42,7 @@ def main():
     description += "</br></br>虚空终端使用说明: 点击虚空终端, 然后根据提示输入指令, 再次点击虚空终端"
     description += "</br></br>如何保存对话: 点击保存当前的对话按钮"
     description += "</br></br>如何语音对话: 请阅读Wiki"
-    userguide = "输入区输入AIO平台:[aio.aiearth.dev](https://aio.aiearth.dev)中转API令牌更换使用GPT4模型；\n[社区福利❤使用说明🚀](https://pl6pt5c18e.feishu.cn/docx/YQpadvaxIoe53CxhTqkcKLI2n2b)"
+    userguide = "输入区输入AIO平台API功能服务:[api.aiearth.dev](https://api.aiearth.dev)中转令牌更换使用GPT4模型；\n[社区福利❤使用说明🚀](https://pl6pt5c18e.feishu.cn/docx/YQpadvaxIoe53CxhTqkcKLI2n2b)"
 
     # 问询记录, python 版本建议3.9+（越新越好）
     import logging, uuid
